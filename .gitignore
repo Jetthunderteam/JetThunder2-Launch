@@ -12,6 +12,7 @@ obj
 node_modules
 /modular/client/build
 /modular/build
+src/main/resources/static/app/bower_components
 **/test/coverage
 /reports
 
