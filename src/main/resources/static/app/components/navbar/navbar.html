@@ -1,0 +1,62 @@
+<!-- Navbar -->
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="NavbarCtrl.openNavigation('left')" aria-label="Open Menu">
+            <md-icon class="navbarIcon">menu</md-icon>
+            <md-tooltip md-delay="250">
+                Menu
+            </md-tooltip>
+        </md-button>
+        <img class="navbarLogo" ng-src="app/images/logos/JetThunder_Logo_Light.png" ui-sref="jetThunder"/>
+        <img class="navbarMobileLogo" ng-src="app/images/logos/JetThunder_Icon_Light_Mobile.png" ui-sref="jetThunder"/>
+        <span flex=""></span>
+        <h2>
+            <span class="navbarTime">{{NavbarCtrl.clock}}</span>
+        </h2>
+        <span flex=""></span>
+        <h2>
+            <strong>{{ NavbarCtrl.likes.$value }}</strong>
+        </h2>
+        <md-button class="md-icon-button" ng-show="NavbarCtrl.user" ng-click="NavbarCtrl.likeUs()" aria-label="Like Us">
+            <md-icon class="navbarIcon">thumb_up</md-icon>
+            <md-tooltip md-delay="250">
+                Like Us!
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Wifi">
+            <md-icon class="navbarIcon" ng-class="{navbarWifiOnIcon: $root.connection == true, navbarWifiOffIcon: $root.connection == false}">wifi</md-icon>
+            <md-tooltip md-delay="250">
+                Connection Status
+            </md-tooltip>
+        </md-button>
+        <md-menu>
+            <md-button class="md-icon-button" ng-click="NavbarCtrl.openMenu($mdOpenMenu, $event)" aria-label="Account">
+                <md-icon class="navbarIcon">fingerprint</md-icon>
+                <md-tooltip md-delay="250">
+                    Identity
+                </md-tooltip>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item ng-show="NavbarCtrl.user">
+                    <md-button ui-sref="profile" role="link">
+                        <md-icon class="navbarIcon">account_circle</md-icon>
+                        My Profile
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-show="!NavbarCtrl.user">
+                    <md-button ng-click="NavbarCtrl.openSignIn(event)">
+                        <md-icon class="navbarIcon">verified_user</md-icon>
+                        Sign In
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-show="NavbarCtrl.user">
+                    <md-button ng-click="NavbarCtrl.signOut()">
+                        <md-icon class="navbarIcon">power_settings_new</md-icon>
+                        Sign Out!
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>
+<!-- /Navbar -->

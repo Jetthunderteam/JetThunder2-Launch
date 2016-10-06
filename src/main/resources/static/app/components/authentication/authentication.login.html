@@ -1,0 +1,41 @@
+<!-- Login -->
+<md-dialog aria-label="Sign In">
+    <form ng-submit="AuthCtrl.signIn(AuthCtrl.email, AuthCtrl.password)" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Sign In</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="AuthCtrl.closeAuthDialog()" aria-label="Close Dialog">
+                    <md-icon class="material-icons">&#xE5CD;</md-icon>
+                    <md-tooltip md-delay="500">
+                        Close Menu
+                    </md-tooltip>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+                <md-content layout-gt-sm="row" layout-padding>
+                        <md-input-container>
+                            <label>Email</label>
+                            <input ng-model="AuthCtrl.email" type="email" placeholder="Email" required>
+                            <div ng-message="required">This is required!</div>
+                        </md-input-container>
+
+                        <md-input-container>
+                            <label>Password</label>
+                            <input ng-model="AuthCtrl.password" type="password" placeholder="Password" required md-maxlength="10">
+                            <div ng-message="required">This is required!</div>
+                        </md-input-container>
+                </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="AuthCtrl.closeAuthDialog()">
+                Cancel
+            </md-button>
+            <md-button ng-click="AuthCtrl.closeAuthDialog()" type="submit">
+                Sign In
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+<!-- /Login -->
