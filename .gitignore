@@ -7,7 +7,7 @@ bin
 obj
 /packages
 
-# Ignore Node & Bower
+# Ignore Node & Bower #
 ###################
 node_modules
 /modular/client/build
@@ -17,7 +17,7 @@ src/main/resources/static/app/bower_components
 /reports
 
 
-# mongo db
+# mongo db #
 ###################
 #Don't commit Mongo Database files
 *.lock
@@ -26,12 +26,19 @@ src/main/resources/static/app/bower_components
 *.ns
 journal
 
-# Java
+# Java #
 ###################
 target
 
-# Ignore Web Storm #
+# Ignore Web Storm/IntelliJ #
+###################
 .idea
+*.iml
+
+# Karma Reports #
+###################
+src/main/resources/static/tests/reports/
+
 
 # Compiled source #
 ###################

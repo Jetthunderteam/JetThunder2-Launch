@@ -1,5 +1,5 @@
 module.exports = function() {
-    var app = 'src/main/resources/static/app/';
+    var app = 'app/';
     var bowerComponents = app+'bower_components/';
 
     var config = {

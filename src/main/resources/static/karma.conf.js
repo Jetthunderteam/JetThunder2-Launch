@@ -1,6 +1,6 @@
 module.exports = function (config) {
-    var app = 'src/main/resources/static/app/';
-    var tests = 'src/main/resources/static/tests/';
+    var app = 'app/';
+    var tests = 'tests/';
     var bowerComponents = app + 'bower_components/';
 
     config.set({
@@ -51,10 +51,10 @@ module.exports = function (config) {
         ],
 
         preprocessors: {
-            'src/main/resources/static/app/*.js': ['coverage'],
-            'src/main/resources/static/app/components/**/*.js': ['coverage'],
-            'src/main/resources/static/app/components/**/*.html': ['ng-html2js'],
-            'src/main/resources/static/tests/unit_tests/fixtures/*.json': ['ng-json2js']
+            'app/*.js': ['coverage'],
+            'app/components/**/*.js': ['coverage'],
+            'app/components/**/*.html': ['ng-html2js'],
+            'tests/unit_tests/fixtures/*.json': ['ng-json2js']
         },
 
         ngHtml2JsPreprocessor: {
@@ -73,7 +73,7 @@ module.exports = function (config) {
         reporters: ['progress', 'coverage'],
 
         coverageReporter: {
-            dir: 'src/main/resources/static/tests/reports',
+            dir: './tests/reports',
             reporters: [
                 {
                     subdir: 'html',
